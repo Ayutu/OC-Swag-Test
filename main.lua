@@ -7,8 +7,8 @@ colors = require("colors")
 local thread = require("thread")
 require("screen")
 require("function")
-refrechnumber = 0
-debugnumer = 0
+debugnumber = 0
+debugnumber2 = 0
 --Component
 gpu = component.gpu
 screen = component.screen.adress
@@ -20,11 +20,18 @@ gpu.set(14,4,"   OFFLINE    ")
 gpu.set(44,4," OFFLINE ")
 
 
-local threadtest = thread.create(function()
-while (running) do
-    refrech()
-    os.sleep()
-end
+local threadData = thread.create(function()
+    while (running) do
+        refrechData()
+        os.sleep(0.5)
+    end
+end)
+
+local threadScreen = thread.create(function()
+    while (running) do
+        refrechScreen()
+        os.sleep(2)
+    end
 end)
 
 while (running) do
@@ -38,4 +45,5 @@ while (running) do
     end
 end
 
-threadtest:kill()
+threadData:kill()
+threadScreen:kill()

@@ -1,8 +1,16 @@
-function refrech()
-    gpu.set(2,2, "Refrech : "..refrechnumber.."")
-    refrechnumber = refrechnumber + 1
-    if (refrechnumber == 9) then
-        refrechnumber = 0
+function refrechData()
+    gpu.set(8,2, ""..debugnumber.."")
+    debugnumber = debugnumber + 1
+    if (debugnumber == 9) then
+        debugnumber = 0
+    end
+end
+
+function refrechScreen()
+    gpu.set(9,2, ""..debugnumber2.."")
+    debugnumber2 = debugnumber2 + 1
+    if (debugnumber2 == 9) then
+        debugnumber2 = 0
     end
 end
 
